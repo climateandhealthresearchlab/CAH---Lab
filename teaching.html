@@ -11,11 +11,12 @@
     <link href="css/theme.css" rel="stylesheet">
 
     <!-- FIXES: Sidebar + Spacing + Scrollspy -->
+  <!-- FIXES ADDED HERE -->
     <style>
-        /* Fix sidebar position so it does NOT overlap header or content */
+        /* Prevent sidebar from covering header */
         .bs-docs-sidebar {
             position: fixed;
-            top: 160px;    /* Increase this if still touching the header */
+            top: 160px;           /* Adjusted so it sits below the header */
             width: 220px;
         }
 
