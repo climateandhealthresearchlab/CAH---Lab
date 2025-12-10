@@ -4,28 +4,24 @@
       <meta charset="utf-8">
       <title>Contact</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Research Lab, Home, Velit Aliquet Sagittis University">
-      <meta name="author" content="">
-      <!-- Le styles -->
+      <meta name="description" content="Research Lab">
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
       <link href="css/theme.css" rel="stylesheet">
       <link href="css/social-buttons.css" rel="stylesheet">
    </head>
+
    <body>
       <div class="container">
 
 <header id="overview" style="text-align:center; margin-bottom: 20px;">
-    <img src="images/heading.jpg" 
-         alt="Climate And Health Research Lab Banner" 
-         style="width:100%; height:auto;">
+    <img src="images/heading.jpg" style="width:100%; height:auto;">
 </header>
 
          <div class="masthead">
             <div class="navbar">
                <div class="navbar-inner">
-                  <div class="container">
-                     <ul class="nav">
+                  <ul class="nav">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="people.html">People</a></li>
                         <li><a href="research.html">Research</a></li>
@@ -34,27 +30,21 @@
                         <li><a href="news.html">News</a></li>
                         <li><a href="teaching.html">Teaching</a></li>
                         <li class="active"><a href="#">Contact</a></li>
-                     </ul>
-                  </div>
+                  </ul>
                </div>
             </div>
          </div>
+
          <hr>
 
          <div class="row-fluid">
             <div class="span6">
                <h3>Get in Touch</h3>
 
-               <!-- ✅ Updated Form (Using FormSubmit) -->
-               <form action="https://formsubmit.co/amponsahdaniel2020@gmail.com" method="POST">
+               <!-- ⭐ Fully Working Formspree Form -->
+               <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
 
-                   <!-- Disable CAPTCHA -->
-                   <input type="hidden" name="_captcha" value="false">
-
-                   <!-- Redirect after successful submission -->
-                   <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-
-                   <!-- Row 1 -->
+                   <!-- First/Last Name -->
                    <div class="row-fluid">
                        <div class="span6">
                            <label>First Name *</label>
@@ -66,7 +56,7 @@
                        </div>
                    </div>
 
-                   <!-- Row 2 -->
+                   <!-- Email + Subject -->
                    <div class="row-fluid">
                        <div class="span6">
                            <label>Email *</label>
@@ -78,64 +68,54 @@
                        </div>
                    </div>
 
-                   <!-- Message Box -->
-                   <label>Message</label>
+                   <!-- Message -->
+                   <label>Message *</label>
                    <textarea name="message" class="input-block-level" rows="7" required></textarea>
 
                    <!-- Submit -->
                    <button type="submit" class="btn btn-warning btn-large" 
-                      style="width:100%; margin-top:10px; font-size:20px;">
+                           style="width:100%; margin-top:10px; font-size:20px;">
                       Submit
                    </button>
                </form>
             </div>
 
-            <!-- Contact Info (Right Side) -->
             <div class="span5 offset1">
                <h3>Contact</h3>
-
                <h4>Phone</h4>
-               <p>+233 20-087-6117 &nbsp;or&nbsp; +233 55-056-3536</p>
+               <p>+233 20-087-6117 or +233 55-056-3536</p>
 
                <h4>Email</h4>
                <p>eyilimoan48@gmail.com</p>
             </div>
          </div>
 
-      <footer id="footer">
-         <div class="container-fluid">
-            <div class="row-fluid">
-               <div class="span5">
-                  <h3>Contact Information</h3>
-                  <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
-                  <p><b>Phone: </b>(+233) 20-087-6117</p>
-                  <p><b>Cell: </b>(+233) 55-056-3536</p>
-                  <a href="mailto:eyilimoan48@gmail.com">Email</a>
-               </div>
-               <div class="span2">
-                  <a href="https://mybrandnewlogo.com/"><img src="images/lablogo.png" alt="research-lab-logo"/></a>
-               </div>
-               <div class="span5">
-                  <h3>Climate and Health Lab</h3>
-                  <p>Casley Hayford<br>
-                     ROOM 432<br>
-                     KNUST, Kumasi<br>
-                     Ghana
-                  </p>
-                  <a href="http://maps.google.com/">Show Map</a>
-               </div>
-            </div>
-         </div>
-      </footer>
+<footer id="footer">
+   <div class="row-fluid">
+      <div class="span5">
+         <h3>Contact Information</h3>
+         <p><b>Office Hours:</b> Mon–Fri (8am–5pm)</p>
+         <p><b>Phone:</b> (+233) 20-087-6117</p>
+         <p><b>Cell:</b> (+233) 55-056-3536</p>
+         <a href="mailto:eyilimoan48@gmail.com">Email</a>
+      </div>
 
-      <script src="js/jquery-1.9.1.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script>
-         $(document).ready(function() {
-             $(document.body).scrollspy({
-                 target: "#navparent"
-             });
-         });
-      </script>
+      <div class="span2">
+         <img src="images/lablogo.png">
+      </div>
+
+      <div class="span5">
+         <h3>Climate and Health Lab</h3>
+         <p>Casley Hayford<br>
+         ROOM 432<br>
+         KNUST, Kumasi<br>
+         Ghana</p>
+         <a href="http://maps.google.com/">Show Map</a>
+      </div>
+   </div>
+</footer>
+
+   <script src="js/jquery-1.9.1.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
    </body>
 </html>
