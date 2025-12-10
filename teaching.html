@@ -4,18 +4,52 @@
     <meta charset="utf-8">
     <title>Teaching</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teaching - Climate and Health Research Lab">
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
+
+    <!-- FIXES ADDED HERE -->
+    <style>
+        /* Prevent sidebar from covering header */
+        .bs-docs-sidebar {
+            position: fixed;
+            top: 160px;           /* Adjusted so it sits below the header */
+            width: 220px;
+        }
+
+        /* Ensure main content is not covered by sidebar */
+        .content-area {
+            margin-left: 270px;
+        }
+
+        /* Scrollspy section offset fix */
+        section {
+            padding-top: 120px;   /* Space so title doesn’t hide under navbar */
+            margin-top: -120px;
+        }
+
+        /* Active highlight */
+        .bs-docs-sidenav .active > a {
+            background-color: #006B3F !important;
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navparent" data-offset="160">
+
 <div class="container">
 
     <!-- Header Image -->
     <header id="overview" style="text-align:center; margin-bottom: 20px;">
-        <img src="images/heading.jpg" alt="Climate And Health Research Lab Banner" 
+        <img src="images/heading.jpg" alt="Climate And Health Research Lab Banner"
              style="width:100%; height:auto;">
     </header>
 
@@ -43,9 +77,9 @@
 
     <div class="row-fluid">
 
-        <!-- Sidebar -->
+        <!-- Sidebar (fixed & scrollspy ready) -->
         <div class="span3 bs-docs-sidebar" id="navparent">
-            <ul class="nav nav-list bs-docs-sidenav" data-spy="affix">
+            <ul class="nav nav-list bs-docs-sidenav">
                 <li><a href="#sciComp546">Scientific Computing for Physics (PHYC 546)</a></li>
                 <li><a href="#python254">Python for Scientific Computing (MET 254)</a></li>
                 <li><a href="#biomet462">Biometeorology & Human Health (MET 462)</a></li>
@@ -57,19 +91,17 @@
         </div>
 
         <!-- Main Content -->
-        <div class="span8 offset1">
+        <div class="span8 offset1 content-area">
 
-            <!-- 1. Scientific Computing PHYC 546 -->
             <section id="sciComp546">
                 <div class="page-header">
                     <h3>Scientific Computing for Physics (PHYC 546)</h3>
                 </div>
-                <p><b>Program:</b> MSc Physics, Institute of Distance Learning (IDL), KNUST</p>
+                <p><b>Program:</b> MSc Physics (IDL), KNUST</p>
                 <p><b>Semester:</b> Spring</p>
-                <p><b>Description:</b> Numerical analysis, algorithm development, and computational methods applied to physics problems.</p>
+                <p><b>Description:</b> Numerical analysis, scientific algorithms, and computational methods for physics.</p>
             </section>
 
-            <!-- 2. Python for Scientific Computing MET 254 -->
             <section id="python254">
                 <div class="page-header">
                     <h3>Python for Scientific Computing (MET 254)</h3>
@@ -77,10 +109,9 @@
                 <p><b>Program:</b> BSc Meteorology & Climate Science</p>
                 <p><b>Level:</b> 200</p>
                 <p><b>Semester:</b> Fall</p>
-                <p><b>Description:</b> Introduction to Python programming, data analysis, visualization, and reproducible scientific workflows.</p>
+                <p><b>Description:</b> Python fundamentals, data analysis, visualization, and reproducible workflows.</p>
             </section>
 
-            <!-- 3. Biometeorology -->
             <section id="biomet462">
                 <div class="page-header">
                     <h3>Biometeorology & Human Health (MET 462)</h3>
@@ -88,10 +119,9 @@
                 <p><b>Program:</b> BSc Meteorology & Climate Science</p>
                 <p><b>Level:</b> 400</p>
                 <p><b>Semester:</b> Fall</p>
-                <p><b>Description:</b> Climate–health interactions, heat stress, disease modelling, and environmental exposures.</p>
+                <p><b>Description:</b> Climate-health dynamics, heat stress, disease modelling, exposure science.</p>
             </section>
 
-            <!-- 4. Fortran -->
             <section id="fortran253">
                 <div class="page-header">
                     <h3>Programming with Fortran (MET 253)</h3>
@@ -99,10 +129,9 @@
                 <p><b>Program:</b> BSc Meteorology & Climate Science</p>
                 <p><b>Level:</b> 200</p>
                 <p><b>Semester:</b> Spring</p>
-                <p><b>Description:</b> Structured and modular programming in Fortran for weather and climate applications.</p>
+                <p><b>Description:</b> Structured programming, arrays, functions, and scientific computing in Fortran.</p>
             </section>
 
-            <!-- 5. Environmental Physics -->
             <section id="envphys369">
                 <div class="page-header">
                     <h3>Environmental Physics I (PHY 369)</h3>
@@ -110,28 +139,26 @@
                 <p><b>Program:</b> BSc Physics</p>
                 <p><b>Level:</b> 300</p>
                 <p><b>Semester:</b> Spring</p>
-                <p><b>Description:</b> Energy balance, atmospheric processes, environmental thermodynamics, and radiation.</p>
+                <p><b>Description:</b> Atmospheric processes, radiation, thermodynamics, and environmental energy balance.</p>
             </section>
 
-            <!-- 6. Scientific Computing PHY 546 -->
             <section id="sciCompPHY546">
                 <div class="page-header">
                     <h3>Scientific Computing for Physics (PHY 546)</h3>
                 </div>
-                <p><b>Program:</b> MSc Physics, IDL</p>
+                <p><b>Program:</b> MSc Physics (IDL)</p>
                 <p><b>Year:</b> 1</p>
                 <p><b>Semester:</b> Spring</p>
-                <p><b>Description:</b> Advanced numerical techniques for modelling and simulation in physics.</p>
+                <p><b>Description:</b> Advanced numerical simulation and modelling techniques.</p>
             </section>
 
-            <!-- 7. Micrometeorology -->
             <section id="micro357">
                 <div class="page-header">
-                    <h3>MET 357: Micrometeorology</h3>
+                    <h3>Micrometeorology (MET 357)</h3>
                 </div>
                 <p><b>Program:</b> BSc Meteorology & Climate Science</p>
                 <p><b>Level:</b> 300</p>
-                <p><b>Description:</b> Surface energy balance, turbulence, boundary-layer dynamics, and micro-scale atmospheric processes.</p>
+                <p><b>Description:</b> Turbulence, surface fluxes, boundary-layer dynamics, and micrometeorological measurements.</p>
             </section>
 
         </div>
@@ -143,19 +170,19 @@
         <div class="row-fluid">
             <div class="span5">
                 <h3>Contact Information</h3>
-                <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
-                <p><b>Phone: </b>(+233) 20-087-6117</p>
-                <p><b>Cell: </b>(+233) 55-056-3536</p>
+                <p><b>Office Hours:</b> Mon–Fri (8am – 5pm)</p>
+                <p><b>Phone:</b> (+233) 20-087-6117</p>
+                <p><b>Cell:</b> (+233) 55-056-3536</p>
                 <a href="mailto:eyilimoan48@gmail.com">Email</a>
             </div>
 
             <div class="span2">
-                <img src="images/lablogo.png" alt="research-lab-logo"/>
+                <img src="images/lablogo.png" alt="lab-logo">
             </div>
 
             <div class="span5">
                 <h3>Climate and Health Lab</h3>
-                <p>Casley Hayford<br>ROOM 432<br>KNUST, Kumasi<br>Ghana</p>
+                <p>Casley Hayford<br>Room 432<br>KNUST, Kumasi<br>Ghana</p>
                 <a href="http://maps.google.com/">Show Map</a>
             </div>
         </div>
@@ -164,10 +191,10 @@
 
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
 <script>
-    $(document).ready(function() {
-        $(document.body).scrollspy({ target: "#navparent" });
-    });
+    // Force scrollspy to refresh after load
+    $('body').scrollspy('refresh');
 </script>
 
 </body>
