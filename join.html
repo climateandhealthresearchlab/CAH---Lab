@@ -13,13 +13,7 @@
 <link href="css/theme.css" rel="stylesheet">
 
 <style>
-    /* Sidebar positioning */
-    .bs-docs-sidebar {
-        position: fixed;
-        top: 160px;
-        width: 240px;
-    }
-
+   
     /* Main content spacing */
     .span8.offset1 {
         margin-left: 360px !important;
@@ -77,14 +71,20 @@
 <div class="row-fluid">
 
     <!-- Sidebar -->
-    <div class="span3 bs-docs-sidebar" id="navparent">
-        <ul class="nav nav-list bs-docs-sidenav" data-spy="affix">
-            <li><a href="#why">Why Join the Lab</a></li>
-            <li><a href="#who">Who Can Apply</a></li>
-            <li><a href="#positions">Available Positions</a></li>
-            <li><a href="#apply">How to Apply</a></li>
-        </ul>
-    </div>
+  <div class="span3 bs-docs-sidebar" id="navparent">
+    <ul class="nav nav-list bs-docs-sidenav"
+        data-spy="affix"
+        data-offset-top="200"
+        data-offset-bottom="260">
+
+        <li><a href="#why">Why Join the Lab</a></li>
+        <li><a href="#who">Who Can Apply</a></li>
+        <li><a href="#positions">Available Positions</a></li>
+        <li><a href="#apply">How to Apply</a></li>
+
+    </ul>
+</div>
+
 
     <!-- Main Content -->
     <div class="span8 offset1">
