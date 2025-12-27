@@ -34,12 +34,21 @@ body {
 }
 
 .theme-toggle {
+    position: fixed;
+    top: 80px;           /* Distance from top - adjust this number */
+    right: 20px;         /* Distance from right side */
     background: var(--secondary-bg);
     border: 1px solid #ccc;
-    border-radius: 25px;
-    padding: 10px 20px;
+    border-radius: 20px;
+    padding: 8px 15px;   /* Smaller padding */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;     /* Smaller font */
+    z-index: 1000;       /* Stays on top of other elements */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
 }
 </style>
    <!-- <meta charset="utf-8">
