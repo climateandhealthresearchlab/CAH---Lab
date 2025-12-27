@@ -34,21 +34,22 @@ body {
 }
 
 .theme-toggle {
-    position: fixed;
-    top: 30px;           /* Distance from top - adjust this number */
-    right: 12px;         /* Distance from right side */
+    position: fixed;        /* Stays in place when scrolling */
+    top: 20px;             /* 20px from the top */
+    right: 20px;           /* 20px from the right */
     background: var(--secondary-bg);
     border: 1px solid #ccc;
     border-radius: 20px;
-    padding: 8px 15px;   /* Smaller padding */
+    padding: 6px 12px;     /* Small and compact */
     cursor: pointer;
-    font-size: 14px;     /* Smaller font */
-    z-index: 1000;       /* Stays on top of other elements */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 13px;       /* Smaller text */
+    z-index: 9999;         /* Stays on top of everything */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .theme-toggle:hover {
     transform: scale(1.05);
+}
 }
 </style>
    <!-- <meta charset="utf-8">
