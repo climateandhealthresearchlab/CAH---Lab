@@ -50,8 +50,101 @@ body {
 .theme-toggle:hover {
     transform: scale(1.05);
 }
+      <!-- Language Selector -->
+<div class="language-selector">
+    <button class="language-btn" id="languageBtn">
+        <span id="currentLangFlag">🌐</span>
+        <span id="currentLangText">English</span>
+        <span>▼</span>
+    </button>
+    <div class="language-dropdown" id="languageDropdown">
+        <div class="language-option active" data-lang="en" data-flag="🇬🇧">English</div>
+        <div class="language-option" data-lang="es" data-flag="🇪🇸">Spanish</div>
+        <div class="language-option" data-lang="fr" data-flag="🇫🇷">French</div>
+        <div class="language-option" data-lang="de" data-flag="🇩🇪">German</div>
+        <div class="language-option" data-lang="zh-CN" data-flag="🇨🇳">Chinese</div>
+        <div class="language-option" data-lang="ja" data-flag="🇯🇵">Japanese</div>
+        <div class="language-option" data-lang="ar" data-flag="🇸🇦">Arabic</div>
+        <div class="language-option" data-lang="pt" data-flag="🇵🇹">Portuguese</div>
+    </div>
+</div>
+
+<!-- Hidden Google Translate element -->
+<div id="google_translate_element" style="display:none;"></div>
+
+      /* Language Selector */
+.language-selector {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.language-btn {
+    background: var(--secondary-bg);
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    color: var(--text-color);
+}
+
+.language-btn:hover {
+    transform: scale(1.05);
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: var(--secondary-bg);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    min-width: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-option {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.language-option:hover {
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.language-option.active {
+    background: rgba(74, 144, 226, 0.2);
+    font-weight: bold;
+}
+
+/* Hide Google Translate ugly banner */
+.skiptranslate iframe {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+.goog-te-banner-frame {
+    display: none !important;
 }
 </style>
+    
    <!-- <meta charset="utf-8">
    <title>Generic Research Lab Template - Home</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -318,6 +411,60 @@ toggle.addEventListener('click', () => {
         localStorage.setItem('theme', 'dark');
         icon.textContent = '☀️';
     }
+});
+</script>
+
+     <!-- Google Translate Script -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fr,de,zh-CN,ja,ko,ar,pt',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+     <script>
+// Language dropdown
+const languageBtn = document.getElementById('languageBtn');
+const languageDropdown = document.getElementById('languageDropdown');
+
+// Open/close dropdown
+languageBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    languageDropdown.classList.toggle('show');
+});
+
+// Close when clicking outside
+document.addEventListener('click', function() {
+    languageDropdown.classList.remove('show');
+});
+
+// When user selects a language
+document.querySelectorAll('.language-option').forEach(function(option) {
+    option.addEventListener('click', function() {
+        const lang = option.getAttribute('data-lang');
+        const flag = option.getAttribute('data-flag');
+        const text = option.textContent;
+        
+        // Update button text
+        document.getElementById('currentLangFlag').textContent = flag;
+        document.getElementById('currentLangText').textContent = text;
+        
+        // Change language
+        setTimeout(function() {
+            const selectElement = document.querySelector('.goog-te-combo');
+            if (selectElement) {
+                selectElement.value = lang;
+                selectElement.dispatchEvent(new Event('change'));
+            }
+        }, 500);
+        
+        // Close dropdown
+        languageDropdown.classList.remove('show');
+    });
 });
 </script>
    </body>
