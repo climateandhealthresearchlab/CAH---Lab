@@ -1,63 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <button class="theme-toggle" id="themeToggle">
-    <span id="themeIcon">🌙</span> Dark Mode
-</button>
     <meta charset="utf-8">
-      <title>Climate And Health Research Lab - Home</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Research Lab, Home, Kwame Nkrumah University of Science and Technology">
-      <meta name="author" content="">
-      <!-- Le styles -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-      <link href="css/theme.css" rel="stylesheet">
+    <title>Climate And Health Research Lab - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research Lab, Home, Kwame Nkrumah University of Science and Technology">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    
     <style>
-  /* Theme colors */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --secondary-bg: #f5f5f5;
-}
+      /* Theme colors */
+      :root {
+          --bg-color: #ffffff;
+          --text-color: #333333;
+          --secondary-bg: #f5f5f5;
+      }
 
-[data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --text-color: #e0e0e0;
-    --secondary-bg: #2d2d2d;
-}
+      [data-theme="dark"] {
+          --bg-color: #1a1a1a;
+          --text-color: #e0e0e0;
+          --secondary-bg: #2d2d2d;
+      }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-}
+      body {
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          transition: background-color 0.3s, color 0.3s;
+      }
 
-.theme-toggle {
-    position: fixed;        /* Stays in place when scrolling */
-    top: 20px;             /* 20px from the top */
-    right: 20px;           /* 20px from the right */
-    background: var(--secondary-bg);
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 6px 12px;     /* Small and compact */
-    cursor: pointer;
-    font-size: 13px;       /* Smaller text */
-    z-index: 9999;         /* Stays on top of everything */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
+      .theme-toggle {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: var(--secondary-bg);
+          border: 1px solid #ccc;
+          border-radius: 20px;
+          padding: 6px 12px;
+          cursor: pointer;
+          font-size: 13px;
+          z-index: 9999;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      }
 
-.theme-toggle:hover {
-    transform: scale(1.05);
-}
-      <!-- Language Selector -->
-<div class="language-selector">
-    <button class="language-btn" id="languageBtn">
+      .theme-toggle:hover {
+          transform: scale(1.05);
+      }
+
+      /* Language Selector */
+      .language-selector {
+          position: fixed;
+          top: 60px;
+          right: 20px;
+          z-index: 9999;
+      }
+
+      .language-btn {
+          background: var(--secondary-bg);
+          border: 1px solid #ccc;
+          border-radius: 20px;
+          padding: 6px 12px;
+          cursor: pointer;
+          font-size: 13px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+          color: var(--text-color);
+      }
+
+      .language-btn:hover {
+          transform: scale(1.05);
+      }
+
+      .language-dropdown {
+          display: none;
+          position: absolute;
+          top: 40px;
+          right: 0;
+          background: var(--secondary-bg);
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+          min-width: 150px;
+          max-height: 300px;
+          overflow-y: auto;
+      }
+
+      .language-dropdown.show {
+          display: block;
+      }
+
+      .language-option {
+          padding: 10px 15px;
+          cursor: pointer;
+          border-bottom: 1px solid #ddd;
+      }
+
+      .language-option:hover {
+          background: rgba(74, 144, 226, 0.1);
+      }
+
+      .language-option.active {
+          background: rgba(74, 144, 226, 0.2);
+          font-weight: bold;
+      }
+
+      /* Hide Google Translate ugly banner */
+      .skiptranslate iframe {
+          display: none !important;
+      }
+
+      .goog-te-banner-frame {
+          display: none !important;
+      }
+      
+      body {
+          top: 0 !important;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle">
+      <span id="themeIcon">🌙</span> Dark
+    </button>
+    
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <button class="language-btn" id="languageBtn">
         <span id="currentLangFlag">🌐</span>
         <span id="currentLangText">English</span>
         <span>▼</span>
-    </button>
-    <div class="language-dropdown" id="languageDropdown">
+      </button>
+      <div class="language-dropdown" id="languageDropdown">
         <div class="language-option active" data-lang="en" data-flag="🇬🇧">English</div>
         <div class="language-option" data-lang="es" data-flag="🇪🇸">Spanish</div>
         <div class="language-option" data-lang="fr" data-flag="🇫🇷">French</div>
@@ -66,406 +145,323 @@ body {
         <div class="language-option" data-lang="ja" data-flag="🇯🇵">Japanese</div>
         <div class="language-option" data-lang="ar" data-flag="🇸🇦">Arabic</div>
         <div class="language-option" data-lang="pt" data-flag="🇵🇹">Portuguese</div>
-    </div>
-</div>
-
-<!-- Hidden Google Translate element -->
-<div id="google_translate_element" style="display:none;"></div>
-
-      /* Language Selector */
-.language-selector {
-    position: fixed;
-    top: 60px;
-    right: 20px;
-    z-index: 9999;
-}
-
-.language-btn {
-    background: var(--secondary-bg);
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    color: var(--text-color);
-}
-
-.language-btn:hover {
-    transform: scale(1.05);
-}
-
-.language-dropdown {
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background: var(--secondary-bg);
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    min-width: 150px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.language-dropdown.show {
-    display: block;
-}
-
-.language-option {
-    padding: 10px 15px;
-    cursor: pointer;
-    border-bottom: 1px solid #ddd;
-}
-
-.language-option:hover {
-    background: rgba(74, 144, 226, 0.1);
-}
-
-.language-option.active {
-    background: rgba(74, 144, 226, 0.2);
-    font-weight: bold;
-}
-
-/* Hide Google Translate ugly banner */
-.skiptranslate iframe {
-    display: none !important;
-}
-
-body {
-    top: 0 !important;
-}
-
-.goog-te-banner-frame {
-    display: none !important;
-}
-</style>
-    
-   <!-- <meta charset="utf-8">
-   <title>Generic Research Lab Template - Home</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Research Lab, Home, Kwame Nkrumah University of Science and Technology">
-   <meta name="author" content="">
-   <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-   <link href="css/theme.css" rel="stylesheet">
-
-   <!-- Fix carousel height -->
-   <!-- <style>
-      .carousel-image {
-         max-height: 380px;
-         width: 100%;
-         object-fit: cover;
-      }
-      .carousel {
-         margin-bottom: 20px;
-      }
-   </style> -->
-</head>
-   <body>
-      <div class="container">
-        <header id="overview" style="text-align:center; margin-bottom: 20px;">
-    <img src="images/heading.jpg" 
-         alt="Climate And Health Research Lab Banner" 
-         style="width:100%; height:auto;">
-</header>
-
-         <div class="masthead">
-            <div class="navbar">
-               <div class="navbar-inner">
-                  <div class="container">
-                     <ul class="nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="people.html">People</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="teaching.html">Teaching</a></li>
-                        <li><a href="join.html">Join Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="row-fluid">
-            <div class="span12">
-               <div id="main-carousel" class="carousel slide">
-                  <div class="carousel-inner">
-                     <div class="item active">
-                        <img src="images/labpicture.jpg" class="carousel-image" alt="">                      
-                        <div class="carousel-caption">
-                           <h4>Welcome to the Climate and Health Lab</h4>
-                           <!-- -->
-                           <p></p>
-                        </div>
-                     </div>
-                     <div class="item">
-                        <img src="images/onlyyamba.jpg" class="carousel-image" alt="">
-                        <div class="carousel-caption">
-                           <h4>Summer School</h4>
-                           <p></p>
-                        </div>
-                     </div>
-                     <div class="item">
-                        <img src="images/yambavic.jpg" class="carousel-image" alt="">
-                        <div class="carousel-caption">
-                           <h4>Presentations</h4>
-                           <p></p>
-                        </div>
-                     </div>
-                  </div>
-                  <a class="left carousel-control" href="#main-carousel" data-slide="prev">‹</a>
-                  <a class="right carousel-control" href="#main-carousel" data-slide="next">›</a>
-               </div>
-            </div>
-         </div>
-         <hr>
-         <div class="container-fluid">
-            <div class="row-fluid marketing">
-               <div class="span12">
-                  <p>
-                    <p>
-  Welcome to the <b>Climate and Health Lab</b>! We are led by
-  <a href="/people/yamba">Dr. Yamba</a> at the
-  <a href="https://www.knust.edu.gh/">Kwame Nkrumah University of Science and Technology</a> (KNUST).
-  <br/><br/>
-  Our research explores the intersection of 
-  <a href="/research">climate variability</a>, 
-  <a href="/research">environmental health</a>, and 
-  <a href="/research">sustainable development</a>.
-  <br/><br/>
-  We use climate data analysis, satellite remote sensing, and modeling techniques to understand how 
-  climate extremes such as heatwaves and floods affect public health and ecosystems.
-</p>
-
-                  </p>
-                  <br/>
-               </div>
-               <div class="row-fluid">
-                  <hr>
-                  <h2 class="centered">Recent News</h2>
-                  <hr>
-               </div>
-               <div class="span4 feature-item">
-                  <h5> <span class="date"> November 29,2025 </span> </h5>
-                  <h4 class="feature-heading">
-                     <a href="https://unsplash.com/photos/CPmrdbbpnXg">
-                     Students from CAHL graduate with PhD in Meteorology and Climate Science
-                     </a>
-                     <br/>
-                  </h4>
-                  <hr>
-                  <div class="centered">
-                     <a href="https://unsplash.com/photos/CPmrdbbpnXg">
-                     <img src="images/PhDNews1.jpg" alt=""></a>
-                  </div>
-                  <hr>
-                  <p>
-                    Dr. Cosmos Senyo Wemegah and Dr. Victoria Owusu Tawiah who were members of the Climate and Health Lab have officially graduated with PhDs. 
-                     They were both supervised by Dr. Edmund Yamba, the PI of the CAHL.
-                     Find the proceedings <a href="https://ghheadlines.com/agency/ghana-business-news/20251130/169533437/knust-confers-221-phd-degrees-at-59th-congregation">here</a>.
-                  </p>
-                  <br/>
-                  <br/>
-               </div>
-               <div class="span4 feature-item">
-                  <h5> <span class="date">April 20, 2019</span> </h5>
-                  <h4 class="feature-heading">
-                     <a href="https://unsplash.com/photos/rTZW4f02zY8">
-                     Tincidunt tortor aliquam nulla facilisi. Nunc scelerisque viverra mauris in
-                     </a>
-                  </h4>
-                  <hr>
-                  <div class="centered">
-                     <a href="https://unsplash.com/photos/rTZW4f02zY8">
-                     <img src="thumbs/nasa-89125-unsplash.jpg" alt="">
-                     </a>
-                  </div>
-                  <hr>
-                  <p>
-                     Read the paper 
-                     <a href="https://unsplash.com/photos/rTZW4f02zY8">here</a>.
-                     Consequat semper viverra nam libero justo laoreet. Commodo odio aenean sed adipiscing diam donec. 
-                  </p>
-                  <br/>
-               </div>
-               <div class="row-fluid">
-                  <div class="span4 feature-item">
-                     <h5> <span class="date">October 2, 2018</span> </h5>
-                     <h4 class="feature-heading">
-                        <a href="http://mechanical.illinois.edu/news/miljkovic-pleased-join-%E2%80%98powerhouse%E2%80%99-illinois">
-                        Pretium lectus quam id leo in vitae turpis massa
-                        <br/>
-                        <br/>
-                        </a>
-                     </h4>
-                     <hr>
-                     <div class="centered">
-                        <a href="https://unsplash.com/photos/WNk-f-TnZDw">
-                        <img src="thumbs/rodolfo-cuadros-762364-unsplash.jpg" alt=""></a>
-                     </div>
-                     <hr>
-                     <p> 
-                        Tristique senectus et netus et malesuada. Sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. 
-                        Read it <a href="https://unsplash.com/photos/WNk-f-TnZDw">here</a>.
-                     </p>
-                     <br/>					
-                  </div>
-               </div>
-               <hr>
-            </div>
-            <div class="row-fluid">
-               <div class="span4 feature-item">
-                  <h4 class="feature-heading"><a href="https://unsplash.com/photos/QvbLjB9pHLM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet ultrices velit habitasse platea</a></h4>
-                  <hr>
-                  <div class="centered">
-                     <a href="https://unsplash.com/photos/QvbLjB9pHLM"><img src="thumbs/ivanov-crop.JPG" alt=""></a>
-                  </div>
-                  <hr>
-                  <p>Aecenas consectetur vestibulum orci ut vulputate. Aenean cursus finibus pulvinar <a href="https://unsplash.com/photos/QvbLjB9pHLM">here</a>. </p>
-                  <br/>
-               </div>
-               <div class="span4 feature-item">
-                  <h4 class="feature-heading"><a href="https://unsplash.com/photos/lQGJCMY5qcM">Maecenas placerat ullamcorper eros a vehicula. Duis mollis tortor ut elit elementum</a></h4>
-                  <hr>
-                  <div class="centered">
-                     <a href="https://unsplash.com/photos/lQGJCMY5qcM"><img src="thumbs/beaker-crop.JPG" alt=""></a>
-                  </div>
-                  <hr>
-                  <p>Read the paper <a href="https://unsplash.com/photos/lQGJCMY5qcM">here</a> </p>
-               </div>
-               <div class="span4 feature-item">
-                  <h4 class="feature-heading"><a href="https://unsplash.com/photos/QCbZ4ASLhM8">Fusce tempor placerat felis, et placerat sapien lacinia sit amet<br/><br/><br/></a></h4>
-                  <hr>
-                  <div class="centered">
-                     <a href="https://unsplash.com/photos/QCbZ4ASLhM8"><img src="thumbs/sato-chart.JPG" alt=""></a>
-                  </div>
-                  <hr>
-                  <p> Aenean posuere, nulla ut placerat fringilla, dolor dolor pellentesque metus. Read the paper <a href="https://unsplash.com/photos/QCbZ4ASLhM8">here</a>.</p>
-                  <br/>
-                  <br/>
-                  <br/>
-               </div>
-            </div>
-         </div>
       </div>
-      <footer id="footer">
-         <div class="container-fluid">
-            <div class="row-fluid">
-               <div class="span5">
-                    <h3>Contact Information</h3>
-                  <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
-                  <p><b>Phone: </b>(+233) 20-087-6117</p>
-                  <p><b>Cell: </b>(+233) 55-056-3536</p>
-                  <a href="mailto:eyilimoan48@gmail.com">Email</a>
-               </div>
-               <div class="span2">
-                  <a href="https://mybrandnewlogo.com/"><img src = "images/lablogo.png" alt="research-lab-logo"/></a>
-               </div>
-               <div class="span5">
-                  <h3>Climate and Health Lab</h3>
-                  <p>Casley Hayford<br>
-                     ROOM 432<br>
-                     KNUST, Kumasi<br>
-                     Ghana
-                  </p>
-                  </p>
-                  <a href="https://www.google.com/maps/place/Kwame+Nkrumah+University+of+Science+and+Technology,+Kumasi/@6.6754286,-1.6489555,13z/data=!3m1!4b1!4m6!3m5!1s0xfdb946c39956a09:0x67868ca2b098015f!8m2!3d6.674688!4d-1.571728!16s%2Fg%2F1vzg3llh!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MTIwNy4wIKXMDSoASAFQAw%3D%3D">Show Map</a>
-               </div>
+    </div>
+
+    <!-- Hidden Google Translate element -->
+    <div id="google_translate_element" style="display:none;"></div>
+    
+    <div class="container">
+      <header id="overview" style="text-align:center; margin-bottom: 20px;">
+        <img src="images/heading.jpg" 
+             alt="Climate And Health Research Lab Banner" 
+             style="width:100%; height:auto;">
+      </header>
+
+      <div class="masthead">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
             </div>
-         </div>
-      </footer>
-
-      <!-- Javascript files -->
-      <script src="js/jquery-1.9.1.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script> $('#main-carousel').carousel(); </script>
-
-     <script>
-const toggle = document.getElementById('themeToggle');
-const icon = document.getElementById('themeIcon');
-const html = document.documentElement;
-
-// Load saved theme
-const saved = localStorage.getItem('theme') || 'light';
-if (saved === 'dark') {
-    html.setAttribute('data-theme', 'dark');
-    icon.textContent = '☀️';
-}
-
-// Toggle on click
-toggle.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme');
-    if (current === 'dark') {
-        html.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        icon.textContent = '🌙';
-    } else {
-        html.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        icon.textContent = '☀️';
-    }
-});
-</script>
-
-     <!-- Google Translate Script -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,es,fr,de,zh-CN,ja,ko,ar,pt',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-     <script>
-// Language dropdown
-const languageBtn = document.getElementById('languageBtn');
-const languageDropdown = document.getElementById('languageDropdown');
-
-// Open/close dropdown
-languageBtn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    languageDropdown.classList.toggle('show');
-});
-
-// Close when clicking outside
-document.addEventListener('click', function() {
-    languageDropdown.classList.remove('show');
-});
-
-// When user selects a language
-document.querySelectorAll('.language-option').forEach(function(option) {
-    option.addEventListener('click', function() {
-        const lang = option.getAttribute('data-lang');
-        const flag = option.getAttribute('data-flag');
-        const text = option.textContent;
+          </div>
+        </div>
+      </div>
+      
+      <div class="row-fluid">
+        <div class="span12">
+          <div id="main-carousel" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="images/labpicture.jpg" class="carousel-image" alt="">                      
+                <div class="carousel-caption">
+                  <h4>Welcome to the Climate and Health Lab</h4>
+                  <p></p>
+                </div>
+              </div>
+              <div class="item">
+                <img src="images/onlyyamba.jpg" class="carousel-image" alt="">
+                <div class="carousel-caption">
+                  <h4>Summer School</h4>
+                  <p></p>
+                </div>
+              </div>
+              <div class="item">
+                <img src="images/yambavic.jpg" class="carousel-image" alt="">
+                <div class="carousel-caption">
+                  <h4>Presentations</h4>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#main-carousel" data-slide="prev">‹</a>
+            <a class="right carousel-control" href="#main-carousel" data-slide="next">›</a>
+          </div>
+        </div>
+      </div>
+      
+      <hr>
+      
+      <div class="container-fluid">
+        <div class="row-fluid marketing">
+          <div class="span12">
+            <p>
+              Welcome to the <b>Climate and Health Lab</b>! We are led by
+              <a href="/people/yamba">Dr. Yamba</a> at the
+              <a href="https://www.knust.edu.gh/">Kwame Nkrumah University of Science and Technology</a> (KNUST).
+              <br/><br/>
+              Our research explores the intersection of 
+              <a href="/research">climate variability</a>, 
+              <a href="/research">environmental health</a>, and 
+              <a href="/research">sustainable development</a>.
+              <br/><br/>
+              We use climate data analysis, satellite remote sensing, and modeling techniques to understand how 
+              climate extremes such as heatwaves and floods affect public health and ecosystems.
+            </p>
+            <br/>
+          </div>
+          
+          <div class="row-fluid">
+            <hr>
+            <h2 class="centered">Recent News</h2>
+            <hr>
+          </div>
+          
+          <div class="span4 feature-item">
+            <h5> <span class="date"> November 29,2025 </span> </h5>
+            <h4 class="feature-heading">
+              <a href="https://unsplash.com/photos/CPmrdbbpnXg">
+              Students from CAHL graduate with PhD in Meteorology and Climate Science
+              </a>
+              <br/>
+            </h4>
+            <hr>
+            <div class="centered">
+              <a href="https://unsplash.com/photos/CPmrdbbpnXg">
+              <img src="images/PhDNews1.jpg" alt=""></a>
+            </div>
+            <hr>
+            <p>
+              Dr. Cosmos Senyo Wemegah and Dr. Victoria Owusu Tawiah who were members of the Climate and Health Lab have officially graduated with PhDs. 
+              They were both supervised by Dr. Edmund Yamba, the PI of the CAHL.
+              Find the proceedings <a href="https://ghheadlines.com/agency/ghana-business-news/20251130/169533437/knust-confers-221-phd-degrees-at-59th-congregation">here</a>.
+            </p>
+            <br/>
+            <br/>
+          </div>
+          
+          <div class="span4 feature-item">
+            <h5> <span class="date">April 20, 2019</span> </h5>
+            <h4 class="feature-heading">
+              <a href="https://unsplash.com/photos/rTZW4f02zY8">
+              Tincidunt tortor aliquam nulla facilisi. Nunc scelerisque viverra mauris in
+              </a>
+            </h4>
+            <hr>
+            <div class="centered">
+              <a href="https://unsplash.com/photos/rTZW4f02zY8">
+              <img src="thumbs/nasa-89125-unsplash.jpg" alt="">
+              </a>
+            </div>
+            <hr>
+            <p>
+              Read the paper 
+              <a href="https://unsplash.com/photos/rTZW4f02zY8">here</a>.
+              Consequat semper viverra nam libero justo laoreet. Commodo odio aenean sed adipiscing diam donec. 
+            </p>
+            <br/>
+          </div>
+          
+          <div class="row-fluid">
+            <div class="span4 feature-item">
+              <h5> <span class="date">October 2, 2018</span> </h5>
+              <h4 class="feature-heading">
+                <a href="http://mechanical.illinois.edu/news/miljkovic-pleased-join-%E2%80%98powerhouse%E2%80%99-illinois">
+                Pretium lectus quam id leo in vitae turpis massa
+                <br/>
+                <br/>
+                </a>
+              </h4>
+              <hr>
+              <div class="centered">
+                <a href="https://unsplash.com/photos/WNk-f-TnZDw">
+                <img src="thumbs/rodolfo-cuadros-762364-unsplash.jpg" alt=""></a>
+              </div>
+              <hr>
+              <p> 
+                Tristique senectus et netus et malesuada. Sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. 
+                Read it <a href="https://unsplash.com/photos/WNk-f-TnZDw">here</a>.
+              </p>
+              <br/>					
+            </div>
+          </div>
+          <hr>
+        </div>
         
-        // Update button text
-        document.getElementById('currentLangFlag').textContent = flag;
-        document.getElementById('currentLangText').textContent = text;
-        
-        // Change language
-        setTimeout(function() {
-            const selectElement = document.querySelector('.goog-te-combo');
-            if (selectElement) {
-                selectElement.value = lang;
-                selectElement.dispatchEvent(new Event('change'));
-            }
-        }, 500);
-        
-        // Close dropdown
-        languageDropdown.classList.remove('show');
-    });
-});
-</script>
-   </body>
+        <div class="row-fluid">
+          <div class="span4 feature-item">
+            <h4 class="feature-heading"><a href="https://unsplash.com/photos/QvbLjB9pHLM">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet ultrices velit habitasse platea</a></h4>
+            <hr>
+            <div class="centered">
+              <a href="https://unsplash.com/photos/QvbLjB9pHLM"><img src="thumbs/ivanov-crop.JPG" alt=""></a>
+            </div>
+            <hr>
+            <p>Aecenas consectetur vestibulum orci ut vulputate. Aenean cursus finibus pulvinar <a href="https://unsplash.com/photos/QvbLjB9pHLM">here</a>. </p>
+            <br/>
+          </div>
+          
+          <div class="span4 feature-item">
+            <h4 class="feature-heading"><a href="https://unsplash.com/photos/lQGJCMY5qcM">Maecenas placerat ullamcorper eros a vehicula. Duis mollis tortor ut elit elementum</a></h4>
+            <hr>
+            <div class="centered">
+              <a href="https://unsplash.com/photos/lQGJCMY5qcM"><img src="thumbs/beaker-crop.JPG" alt=""></a>
+            </div>
+            <hr>
+            <p>Read the paper <a href="https://unsplash.com/photos/lQGJCMY5qcM">here</a> </p>
+          </div>
+          
+          <div class="span4 feature-item">
+            <h4 class="feature-heading"><a href="https://unsplash.com/photos/QCbZ4ASLhM8">Fusce tempor placerat felis, et placerat sapien lacinia sit amet<br/><br/><br/></a></h4>
+            <hr>
+            <div class="centered">
+              <a href="https://unsplash.com/photos/QCbZ4ASLhM8"><img src="thumbs/sato-chart.JPG" alt=""></a>
+            </div>
+            <hr>
+            <p> Aenean posuere, nulla ut placerat fringilla, dolor dolor pellentesque metus. Read the paper <a href="https://unsplash.com/photos/QCbZ4ASLhM8">here</a>.</p>
+            <br/>
+            <br/>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer id="footer">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span5">
+            <h3>Contact Information</h3>
+            <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
+            <p><b>Phone: </b>(+233) 20-087-6117</p>
+            <p><b>Cell: </b>(+233) 55-056-3536</p>
+            <a href="mailto:eyilimoan48@gmail.com">Email</a>
+          </div>
+          <div class="span2">
+            <a href="https://mybrandnewlogo.com/"><img src = "images/lablogo.png" alt="research-lab-logo"/></a>
+          </div>
+          <div class="span5">
+            <h3>Climate and Health Lab</h3>
+            <p>Casley Hayford<br>
+               ROOM 432<br>
+               KNUST, Kumasi<br>
+               Ghana
+            </p>
+            <a href="https://www.google.com/maps/place/Kwame+Nkrumah+University+of+Science+and+Technology,+Kumasi/@6.6754286,-1.6489555,13z/data=!3m1!4b1!4m6!3m5!1s0xfdb946c39956a09:0x67868ca2b098015f!8m2!3d6.674688!4d-1.571728!16s%2Fg%2F1vzg3llh!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MTIwNy4wIKXMDSoASAFQAw%3D%3D">Show Map</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Javascript files -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script> $('#main-carousel').carousel(); </script>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+      const html = document.documentElement;
+
+      // Load saved theme
+      const saved = localStorage.getItem('theme') || 'light';
+      if (saved === 'dark') {
+          html.setAttribute('data-theme', 'dark');
+          icon.textContent = '☀️';
+      }
+
+      // Toggle on click
+      toggle.addEventListener('click', () => {
+          const current = html.getAttribute('data-theme');
+          if (current === 'dark') {
+              html.setAttribute('data-theme', 'light');
+              localStorage.setItem('theme', 'light');
+              icon.textContent = '🌙';
+          } else {
+              html.setAttribute('data-theme', 'dark');
+              localStorage.setItem('theme', 'dark');
+              icon.textContent = '☀️';
+          }
+      });
+    </script>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+              pageLanguage: 'en',
+              includedLanguages: 'en,es,fr,de,zh-CN,ja,ko,ar,pt,ru,hi,it',
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Language Selector Script -->
+    <script>
+      // Language dropdown
+      const languageBtn = document.getElementById('languageBtn');
+      const languageDropdown = document.getElementById('languageDropdown');
+
+      // Open/close dropdown
+      languageBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          languageDropdown.classList.toggle('show');
+      });
+
+      // Close when clicking outside
+      document.addEventListener('click', function() {
+          languageDropdown.classList.remove('show');
+      });
+
+      // When user selects a language
+      document.querySelectorAll('.language-option').forEach(function(option) {
+          option.addEventListener('click', function() {
+              const lang = option.getAttribute('data-lang');
+              const flag = option.getAttribute('data-flag');
+              const text = option.textContent;
+              
+              // Update button text
+              document.getElementById('currentLangFlag').textContent = flag;
+              document.getElementById('currentLangText').textContent = text;
+              
+              // Update active state
+              document.querySelectorAll('.language-option').forEach(opt => opt.classList.remove('active'));
+              option.classList.add('active');
+              
+              // Change language
+              setTimeout(function() {
+                  const selectElement = document.querySelector('.goog-te-combo');
+                  if (selectElement) {
+                      selectElement.value = lang;
+                      selectElement.dispatchEvent(new Event('change'));
+                  }
+              }, 500);
+              
+              // Close dropdown
+              languageDropdown.classList.remove('show');
+          });
+      });
+    </script>
+  </body>
 </html>
