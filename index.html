@@ -373,14 +373,13 @@
     <!-- Theme Toggle Script -->
     <script>
       const toggle = document.getElementById('themeToggle');
-      const icon = document.getElementById('themeIcon');
       const html = document.documentElement;
 
       // Load saved theme
       const saved = localStorage.getItem('theme') || 'light';
       if (saved === 'dark') {
           html.setAttribute('data-theme', 'dark');
-          icon.textContent = '☀️';
+          toggle.innerHTML = '<span id="themeIcon">☀️</span> Light';
       }
 
       // Toggle on click
@@ -389,11 +388,11 @@
           if (current === 'dark') {
               html.setAttribute('data-theme', 'light');
               localStorage.setItem('theme', 'light');
-              icon.textContent = '🌙';
+              toggle.innerHTML = '<span id="themeIcon">🌙</span> Dark';
           } else {
               html.setAttribute('data-theme', 'dark');
               localStorage.setItem('theme', 'dark');
-              icon.textContent = '☀️';
+              toggle.innerHTML = '<span id="themeIcon">☀️</span> Light';
           }
       });
     </script>
