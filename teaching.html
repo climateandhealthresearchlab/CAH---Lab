@@ -1,13 +1,10 @@
+Below is the Teaching section, also fix the scrolling tab on the left after the edit...
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Teaching</title>
-
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="images/Favicon.png">
-    <link rel="icon" type="image/png" sizes="59x59" href="images/Favicon.png">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Teaching - Climate and Health Research Lab">
 
@@ -16,10 +13,13 @@
     <link href="css/theme.css" rel="stylesheet">
 
     <!-- FIXES: Sidebar + Spacing + Scrollspy -->
+  <!-- FIXES ADDED HERE -->
     <style>
+      
+
         /* Push main content away from sidebar */
         .span8.offset1 {
-            margin-left: 350px !important;
+            margin-left: 350px !important;   /* Adjust this to move content right */
         }
 
         /* Prevent section titles from hiding under navbar on scroll */
@@ -28,83 +28,10 @@
             margin-top: -80px;
         }
 
-        /* ===== THEME VARIABLES ===== */
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --secondary-bg: #f5f5f5;
-        }
-
-        [data-theme="dark"] {
-            --bg-color: #1a1a1a;
-            --text-color: #e0e0e0;
-            --secondary-bg: #2d2d2d;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        /* Theme toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--secondary-bg);
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            padding: 6px 12px;
-            cursor: pointer;
-            font-size: 13px;
-            z-index: 9999;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            color: var(--text-color);
-        }
-
-        /* Google Translate */
-        #google_translate_element {
-            position: fixed;
-            top: 60px;
-            right: 20px;
-            z-index: 9999;
-            background: var(--secondary-bg);
-            padding: 5px 10px;
-            border-radius: 20px;
-            border: 1px solid #ccc;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-
-        .skiptranslate iframe,
-        .goog-te-banner-frame,
-        .goog-logo-link,
-        .goog-te-gadget span {
-            display: none !important;
-        }
-
-        body { top: 0 !important; }
-
-        #google_translate_element select {
-            background: var(--secondary-bg);
-            color: var(--text-color);
-            border: 1px solid #ccc;
-            padding: 4px 8px;
-            border-radius: 10px;
-            font-size: 13px;
-        }
-    </style>
+       </style>
 </head>
 
 <body>
-
-<!-- THEME TOGGLE -->
-<button class="theme-toggle" id="themeToggle">
-    <span>🌙</span> Dark
-</button>
-
-<!-- GOOGLE TRANSLATE -->
-<div id="google_translate_element"></div>
 
 <div class="container">
 
@@ -154,6 +81,7 @@
         <!-- MAIN CONTENT -->
         <div class="span8 offset1">
 
+            <!-- 1. Scientific Computing PHYC 546 -->
             <section id="sciComp546">
                 <div class="page-header">
                     <h3>Scientific Computing for Physics (PHYC 546)</h3>
@@ -163,6 +91,7 @@
                 <p><b>Description:</b> Numerical analysis, algorithm development, and computational methods applied to physics problems.</p>
             </section>
 
+            <!-- 2. Python for Scientific Computing MET 254 -->
             <section id="python254">
                 <div class="page-header">
                     <h3>Python for Scientific Computing (MET 254)</h3>
@@ -173,6 +102,7 @@
                 <p><b>Description:</b> Introduction to Python programming, data analysis, visualization, and reproducible scientific workflows.</p>
             </section>
 
+            <!-- 3. Biometeorology -->
             <section id="biomet462">
                 <div class="page-header">
                     <h3>Biometeorology & Human Health (MET 462)</h3>
@@ -183,6 +113,7 @@
                 <p><b>Description:</b> Climate–health interactions, heat stress, disease modelling, and environmental exposures.</p>
             </section>
 
+            <!-- 4. Fortran -->
             <section id="fortran253">
                 <div class="page-header">
                     <h3>Programming with Fortran (MET 253)</h3>
@@ -193,6 +124,7 @@
                 <p><b>Description:</b> Structured and modular programming in Fortran for weather and climate applications.</p>
             </section>
 
+            <!-- 5. Environmental Physics -->
             <section id="envphys369">
                 <div class="page-header">
                     <h3>Environmental Physics I (PHY 369)</h3>
@@ -203,6 +135,7 @@
                 <p><b>Description:</b> Energy balance, atmospheric processes, environmental thermodynamics, and radiation.</p>
             </section>
 
+            <!-- 6. Scientific Computing PHY 546 -->
             <section id="sciCompPHY546">
                 <div class="page-header">
                     <h3>Scientific Computing for Physics (PHY 546)</h3>
@@ -213,6 +146,7 @@
                 <p><b>Description:</b> Advanced numerical techniques for modelling and simulation in physics.</p>
             </section>
 
+            <!-- 7. Micrometeorology -->
             <section id="micro357">
                 <div class="page-header">
                     <h3>MET 357: Micrometeorology</h3>
@@ -222,10 +156,12 @@
                 <p><b>Description:</b> Surface energy balance, turbulence, boundary-layer dynamics, and micro-scale atmospheric processes.</p>
             </section>
 
-        </div>
-    </div>
-</div>
+        </div> <!-- END MAIN -->
 
+    </div> <!-- END ROW -->
+</div> <!-- END CONTAINER -->
+
+<!-- FOOTER -->
 <footer id="footer">
     <div class="container-fluid">
         <div class="row-fluid">
@@ -257,39 +193,6 @@
     $(document).ready(function() {
         $(document.body).scrollspy({ target: "#navparent" });
     });
-</script>
-
-<!-- GOOGLE TRANSLATE -->
-<script>
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-<!-- THEME SCRIPT -->
-<script>
-const toggle = document.getElementById('themeToggle');
-const html = document.documentElement;
-const savedTheme = localStorage.getItem('theme') || 'light';
-
-if (savedTheme === 'dark') {
-    html.setAttribute('data-theme', 'dark');
-    toggle.innerHTML = '<span>☀️</span> Light';
-}
-
-toggle.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme');
-    if (current === 'dark') {
-        html.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        toggle.innerHTML = '<span>🌙</span> Dark';
-    } else {
-        html.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        toggle.innerHTML = '<span>☀️</span> Light';
-    }
-});
 </script>
 
 </body>
