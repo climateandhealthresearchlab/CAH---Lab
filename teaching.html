@@ -1,196 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Teaching</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teaching - Climate and Health Research Lab">
+<meta charset="utf-8">
+<title>Teaching</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="css/theme.css" rel="stylesheet">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/Favicon.png">
 
-    <!-- FIXES: Sidebar + Spacing + Scrollspy -->
-  <!-- FIXES ADDED HERE -->
-    <style>
-      
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Teaching - Climate and Health Research Lab">
 
-        /* Push main content away from sidebar */
-        .span8.offset1 {
-            margin-left: 350px !important;   /* Adjust this to move content right */
-        }
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
 
-        /* Prevent section titles from hiding under navbar on scroll */
-        section {
-            padding-top: 80px;
-            margin-top: -80px;
-        }
+<style>
+:root {
+  --bg-color:#fff;
+  --text-color:#333;
+  --secondary-bg:#f5f5f5;
+}
 
-       </style>
+[data-theme="dark"] {
+  --bg-color:#1a1a1a;
+  --text-color:#e0e0e0;
+  --secondary-bg:#2d2d2d;
+}
+
+body {
+  background:var(--bg-color);
+  color:var(--text-color);
+}
+
+.theme-toggle {
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:var(--secondary-bg);
+  border:1px solid #ccc;
+  border-radius:20px;
+  padding:6px 12px;
+  cursor:pointer;
+  z-index:9999;
+}
+
+#google_translate_element {
+  position:fixed;
+  top:60px;
+  right:20px;
+  z-index:9999;
+  background:var(--secondary-bg);
+  padding:5px 10px;
+  border-radius:20px;
+  border:1px solid #ccc;
+}
+
+.skiptranslate iframe,
+.goog-te-banner-frame,
+.goog-logo-link,
+.goog-te-gadget span {
+  display:none !important;
+}
+
+body { top:0 !important; }
+
+/* Sidebar fix */
+.bs-docs-sidebar {
+  position:sticky;
+  top:120px;
+}
+
+.bs-docs-sidebar .nav > li > a {
+  padding:6px 15px;
+}
+
+.bs-docs-sidebar .nav > .active > a {
+  font-weight:bold;
+  background:#eee;
+}
+
+/* Scroll offset fix */
+section {
+  scroll-margin-top:120px;
+}
+
+/* Dark navbar/footer */
+[data-theme="dark"] .navbar,
+[data-theme="dark"] footer {
+  background:#222 !important;
+}
+</style>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navparent" data-offset="120">
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" id="themeToggle">
+🌙 Dark
+</button>
+
+<!-- Google Translate -->
+<div id="google_translate_element"></div>
 
 <div class="container">
 
-    <!-- Header Image -->
-    <header id="overview" style="text-align:center; margin-bottom:20px;">
-        <img src="images/heading.jpg" alt="Climate And Health Research Lab Banner" style="width:100%; height:auto;">
-    </header>
+<header id="overview" style="text-align:center;margin-bottom:20px;">
+<img src="images/heading.jpg" style="width:100%;">
+</header>
 
-    <!-- Navigation Bar -->
-    <div class="masthead">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="container">
-                    <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="people.html">People</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li class="active"><a href="#">Teaching</a></li>
-                        <li><a href="join.html">Join Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="masthead">
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+<ul class="nav">
+<li><a href="index.html">Home</a></li>
+<li><a href="people.html">People</a></li>
+<li><a href="research.html">Research</a></li>
+<li><a href="publications.html">Publications</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="news.html">News</a></li>
+<li class="active"><a href="#">Teaching</a></li>
+<li><a href="join.html">Join Us</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 
-    <hr>
+<hr>
 
-    <div class="row-fluid">
+<div class="row-fluid">
 
-        <!-- SIDEBAR -->
-        <div class="span3 bs-docs-sidebar" id="navparent">
-            <ul class="nav nav-list bs-docs-sidenav" data-spy="affix">
-                <li><a href="#sciComp546">Scientific Computing for Physics (PHYC 546)</a></li>
-                <li><a href="#python254">Python for Scientific Computing (MET 254)</a></li>
-                <li><a href="#biomet462">Biometeorology & Human Health (MET 462)</a></li>
-                <li><a href="#fortran253">Programming with Fortran (MET 253)</a></li>
-                <li><a href="#envphys369">Environmental Physics I (PHY 369)</a></li>
-                <li><a href="#sciCompPHY546">Scientific Computing for Physics (PHY 546)</a></li>
-                <li><a href="#micro357">Micrometeorology (MET 357)</a></li>
-            </ul>
-        </div>
+<!-- SIDEBAR -->
+<div class="span3 bs-docs-sidebar" id="navparent">
+<ul class="nav nav-list">
+<li><a href="#sciComp546">PHYC 546</a></li>
+<li><a href="#python254">MET 254</a></li>
+<li><a href="#biomet462">MET 462</a></li>
+<li><a href="#fortran253">MET 253</a></li>
+<li><a href="#envphys369">PHY 369</a></li>
+<li><a href="#sciCompPHY546">PHY 546</a></li>
+<li><a href="#micro357">MET 357</a></li>
+</ul>
+</div>
 
-        <!-- MAIN CONTENT -->
-        <div class="span8 offset1">
+<!-- MAIN CONTENT -->
+<div class="span9">
 
-            <!-- 1. Scientific Computing PHYC 546 -->
-            <section id="sciComp546">
-                <div class="page-header">
-                    <h3>Scientific Computing for Physics (PHYC 546)</h3>
-                </div>
-                <p><b>Program:</b> MSc Physics, Institute of Distance Learning (IDL), KNUST</p>
-                <p><b>Semester:</b> Spring</p>
-                <p><b>Description:</b> Numerical analysis, algorithm development, and computational methods applied to physics problems.</p>
-            </section>
+<section id="sciComp546">
+<h3>Scientific Computing for Physics (PHYC 546)</h3>
+<p><b>Program:</b> MSc Physics (IDL), KNUST</p>
+</section>
 
-            <!-- 2. Python for Scientific Computing MET 254 -->
-            <section id="python254">
-                <div class="page-header">
-                    <h3>Python for Scientific Computing (MET 254)</h3>
-                </div>
-                <p><b>Program:</b> BSc Meteorology & Climate Science</p>
-                <p><b>Level:</b> 200</p>
-                <p><b>Semester:</b> Fall</p>
-                <p><b>Description:</b> Introduction to Python programming, data analysis, visualization, and reproducible scientific workflows.</p>
-            </section>
+<section id="python254">
+<h3>Python for Scientific Computing (MET 254)</h3>
+</section>
 
-            <!-- 3. Biometeorology -->
-            <section id="biomet462">
-                <div class="page-header">
-                    <h3>Biometeorology & Human Health (MET 462)</h3>
-                </div>
-                <p><b>Program:</b> BSc Meteorology & Climate Science</p>
-                <p><b>Level:</b> 400</p>
-                <p><b>Semester:</b> Fall</p>
-                <p><b>Description:</b> Climate–health interactions, heat stress, disease modelling, and environmental exposures.</p>
-            </section>
+<section id="biomet462">
+<h3>Biometeorology & Human Health (MET 462)</h3>
+</section>
 
-            <!-- 4. Fortran -->
-            <section id="fortran253">
-                <div class="page-header">
-                    <h3>Programming with Fortran (MET 253)</h3>
-                </div>
-                <p><b>Program:</b> BSc Meteorology & Climate Science</p>
-                <p><b>Level:</b> 200</p>
-                <p><b>Semester:</b> Spring</p>
-                <p><b>Description:</b> Structured and modular programming in Fortran for weather and climate applications.</p>
-            </section>
+<section id="fortran253">
+<h3>Programming with Fortran (MET 253)</h3>
+</section>
 
-            <!-- 5. Environmental Physics -->
-            <section id="envphys369">
-                <div class="page-header">
-                    <h3>Environmental Physics I (PHY 369)</h3>
-                </div>
-                <p><b>Program:</b> BSc Physics</p>
-                <p><b>Level:</b> 300</p>
-                <p><b>Semester:</b> Spring</p>
-                <p><b>Description:</b> Energy balance, atmospheric processes, environmental thermodynamics, and radiation.</p>
-            </section>
+<section id="envphys369">
+<h3>Environmental Physics I (PHY 369)</h3>
+</section>
 
-            <!-- 6. Scientific Computing PHY 546 -->
-            <section id="sciCompPHY546">
-                <div class="page-header">
-                    <h3>Scientific Computing for Physics (PHY 546)</h3>
-                </div>
-                <p><b>Program:</b> MSc Physics, IDL</p>
-                <p><b>Year:</b> 1</p>
-                <p><b>Semester:</b> Spring</p>
-                <p><b>Description:</b> Advanced numerical techniques for modelling and simulation in physics.</p>
-            </section>
+<section id="sciCompPHY546">
+<h3>Scientific Computing for Physics (PHY 546)</h3>
+</section>
 
-            <!-- 7. Micrometeorology -->
-            <section id="micro357">
-                <div class="page-header">
-                    <h3>MET 357: Micrometeorology</h3>
-                </div>
-                <p><b>Program:</b> BSc Meteorology & Climate Science</p>
-                <p><b>Level:</b> 300</p>
-                <p><b>Description:</b> Surface energy balance, turbulence, boundary-layer dynamics, and micro-scale atmospheric processes.</p>
-            </section>
+<section id="micro357">
+<h3>Micrometeorology (MET 357)</h3>
+</section>
 
-        </div> <!-- END MAIN -->
+</div>
+</div>
+</div>
 
-    </div> <!-- END ROW -->
-</div> <!-- END CONTAINER -->
-
-<!-- FOOTER -->
 <footer id="footer">
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span5">
-                <h3>Contact Information</h3>
-                <p><b>Office Hours:</b> Monday-Friday (8.00am - 5.00pm)</p>
-                <p><b>Phone:</b> (+233) 20-087-6117</p>
-                <p><b>Cell:</b> (+233) 55-056-3536</p>
-                <a href="mailto:eyilimoan48@gmail.com">Email</a>
-            </div>
-
-            <div class="span2">
-                <img src="images/lablogo.png" alt="research-lab-logo"/>
-            </div>
-
-            <div class="span5">
-                <h3>Climate and Health Lab</h3>
-                <p>Casley Hayford<br>ROOM 432<br>KNUST, Kumasi<br>Ghana</p>
-                <a href="http://maps.google.com/">Show Map</a>
-            </div>
-        </div>
-    </div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span5">
+<h3>Contact Information</h3>
+<p>Phone: (+233) 20-087-6117</p>
+</div>
+<div class="span2">
+<img src="images/lablogo.png">
+</div>
+<div class="span5">
+<h3>Climate and Health Lab</h3>
+<p>KNUST, Kumasi, Ghana</p>
+</div>
+</div>
+</div>
 </footer>
 
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
+<!-- Translate -->
 <script>
-    $(document).ready(function() {
-        $(document.body).scrollspy({ target: "#navparent" });
-    });
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage:'en'}, 'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Theme -->
+<script>
+const toggle=document.getElementById('themeToggle');
+const html=document.documentElement;
+const saved=localStorage.getItem('theme')||'light';
+
+if(saved==='dark'){
+html.setAttribute('data-theme','dark');
+toggle.innerHTML='☀️ Light';
+}
+
+toggle.onclick=()=>{
+const t=html.getAttribute('data-theme');
+html.setAttribute('data-theme',t==='dark'?'light':'dark');
+localStorage.setItem('theme',t==='dark'?'light':'dark');
+toggle.innerHTML=t==='dark'?'🌙 Dark':'☀️ Light';
+};
 </script>
 
 </body>
