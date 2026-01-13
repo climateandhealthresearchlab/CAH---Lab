@@ -1,287 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <title>Contact - Climate And Health Research Lab</title>
-      <link rel="icon" type="image/png" href="images/lablogo.png">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Research Lab">
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-      <link href="css/theme.css" rel="stylesheet">
-      <link href="css/social-buttons.css" rel="stylesheet">
+<head>
+<meta charset="utf-8">
+<title>Contact - Climate And Health Research Lab</title>
+<link rel="icon" type="image/png" href="images/lablogo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Research Lab">
 
-      <style>
-         /* Theme colors */
-         :root {
-             --bg-color: #ffffff;
-             --text-color: #333333;
-             --secondary-bg: #f5f5f5;
-         }
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/social-buttons.css" rel="stylesheet">
 
-         [data-theme="dark"] {
-             --bg-color: #1a1a1a;
-             --text-color: #e0e0e0;
-             --secondary-bg: #2d2d2d;
-         }
+<style>
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --secondary-bg: #f5f5f5;
+}
 
-         body {
-             background-color: var(--bg-color);
-             color: var(--text-color);
-             transition: background-color 0.3s, color 0.3s;
-         }
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --secondary-bg: #2d2d2d;
+}
 
-         .theme-toggle {
-             position: fixed;
-             top: 20px;
-             right: 20px;
-             background: var(--secondary-bg);
-             border: 1px solid #ccc;
-             border-radius: 20px;
-             padding: 6px 12px;
-             cursor: pointer;
-             font-size: 13px;
-             z-index: 9999;
-             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-             color: var(--text-color);
-         }
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
 
-         .theme-toggle:hover {
-             transform: scale(1.05);
-         }
+/* Header image spacing fix */
+.page-header {
+    margin-bottom: 50px;
+}
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-         /* Google Translate Styling */
-         #google_translate_element {
-             position: fixed;
-             top: 60px;
-             right: 20px;
-             z-index: 9999;
-             background: var(--secondary-bg);
-             padding: 5px 10px;
-             border-radius: 20px;
-             border: 1px solid #ccc;
-             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-         }
+/* Theme toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: var(--secondary-bg);
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
 
-         .goog-te-combo {
-             background: var(--secondary-bg);
-             color: var(--text-color);
-             border: none;
-             padding: 5px;
-             border-radius: 5px;
-             cursor: pointer;
-             font-size: 13px;
-         }
+/* Google Translate */
+#google_translate_element {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 9999;
+    background: var(--secondary-bg);
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
 
-         /* Hide Google Translate banner */
-         .skiptranslate iframe {
-             display: none !important;
-         }
+.goog-te-banner-frame,
+.skiptranslate iframe,
+.goog-logo-link {
+    display: none !important;
+}
 
-         .goog-te-banner-frame {
-             display: none !important;
-         }
-         
-         body {
-             top: 0 !important;
-         }
-         
-         .goog-logo-link {
-             display: none !important;
-         }
-         
-         .goog-te-gadget {
-             color: transparent !important;
-             font-size: 0 !important;
-         }
-         
-         .goog-te-gadget .goog-te-combo {
-             margin: 0 !important;
-         }
+body {
+    top: 0 !important;
+}
+</style>
+</head>
 
-         .goog-te-gadget span {
-             display: none !important;
-         }
+<body>
 
-         .goog-te-gadget > span > a {
-             display: none !important;
-         }
+<button class="theme-toggle" id="themeToggle">
+    <span id="themeIcon">🌙</span> Dark
+</button>
 
-         .goog-te-gadget .goog-te-combo {
-             color: var(--text-color) !important;
-         }
+<div id="google_translate_element"></div>
 
-         #google_translate_element select {
-             background: var(--secondary-bg) !important;
-             color: var(--text-color) !important;
-             border: 1px solid #ccc !important;
-             padding: 4px 8px !important;
-             border-radius: 10px !important;
-             font-size: 13px !important;
-         }
-      </style>
-   </head>
+<div class="container">
 
-   <body>
-      <!-- Theme Toggle Button -->
-      <button class="theme-toggle" id="themeToggle">
-         <span id="themeIcon">🌙</span> Dark
-      </button>
-      
-      <!-- Google Translate Widget -->
-      <div id="google_translate_element"></div>
+    <!-- HEADER IMAGE -->
+    <header id="overview" class="page-header">
+        <img src="images/heading.jpg" class="header-image" alt="Climate and Health Lab">
+    </header>
 
-      <div class="container">
-         <header id="overview" style="text-align:center; margin-bottom: 20px;">
-            <img src="images/heading.jpg" style="width:100%; height:auto;">
-         </header>
-
-         <div class="masthead">
-            <div class="navbar">
-               <div class="navbar-inner">
-                  <ul class="nav">
-                     <li><a href="index.html">Home</a></li>
-                     <li><a href="people.html">People</a></li>
-                     <li><a href="research.html">Research</a></li>
-                     <li><a href="publications.html">Publications</a></li>
-                     <li><a href="gallery.html">Gallery</a></li>
-                     <li><a href="news.html">News</a></li>
-                     <li><a href="teaching.html">Teaching</a></li>
-                     <li><a href="join.html">Join Us</a></li>
-                     <li class="active"><a href="#">Contact</a></li>
-                  </ul>
-               </div>
+    <!-- NAVBAR -->
+    <div class="masthead">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="people.html">People</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="teaching.html">Teaching</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li class="active"><a href="#">Contact</a></li>
+                </ul>
             </div>
-         </div>
+        </div>
+    </div>
 
-         <hr>
+    <hr>
 
-         <div class="row-fluid">
-           <div class="span6">
-    <h3>Get in Touch</h3>
+    <!-- CONTACT SECTION -->
+    <div class="row-fluid">
 
-   
-    <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLScq84KlwPT10jh4TW82W0HBaaSBzkF7hZZkD2kmCvqn4yXkbg/viewform?usp=header"
-        width="100%" 
-        height="900" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0"
-        style="border-radius: 10px;">
-        Loading…
-    </iframe>
+        <!-- LEFT COLUMN -->
+        <div class="span6">
+            <h3>Get in Touch</h3>
+
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLScq84KlwPT10jh4TW82W0HBaaSBzkF7hZZkD2kmCvqn4yXkbg/viewform?usp=header"
+                width="100%"
+                height="900"
+                frameborder="0"
+                style="border-radius: 10px;">
+            </iframe>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="span5 offset1">
+            <h3>Contact</h3>
+
+            <h4>Phone</h4>
+            <p>+233 20-087-6117<br>+233 55-056-3536</p>
+
+            <h4>Email</h4>
+            <p>eyilimoan48@gmail.com</p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="row-fluid">
+
+            <div class="span5">
+                <h3>Contact Information</h3>
+                <p><b>Office Hours:</b> Mon–Fri (8am–5pm)</p>
+                <p><b>Phone:</b> (+233) 20-087-6117</p>
+                <p><b>Cell:</b> (+233) 55-056-3536</p>
+                <a href="mailto:eyilimoan48@gmail.com">Email</a>
+            </div>
+
+            <div class="span2">
+                <img src="images/lablogo.png" alt="Lab Logo">
+            </div>
+
+            <div class="span5">
+                <h3>Climate and Health Lab</h3>
+                <p>
+                    Casley Hayford<br>
+                    ROOM 432<br>
+                    KNUST, Kumasi<br>
+                    Ghana
+                </p>
+                <a href="https://www.google.com/maps/place/Kwame+Nkrumah+University+of+Science+and+Technology,+Kumasi/">Show Map</a>
+            </div>
+
+        </div>
+    </footer>
+
 </div>
 
-                   <div class="row-fluid">
-                       <div class="span6">
-                           <label>Email *</label>
-                           <input type="email" name="email" class="input-block-level" required>
-                       </div>
-                       <div class="span6">
-                           <label>Subject</label>
-                           <input type="text" name="subject" class="input-block-level">
-                       </div>
-                   </div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
-                   <label>Message *</label>
-                   <textarea name="message" class="input-block-level" rows="7" required></textarea>
+<!-- Theme Toggle Script -->
+<script>
+const toggle = document.getElementById('themeToggle');
+const html = document.documentElement;
 
-                   <button type="submit" class="btn btn-warning btn-large" 
-                           style="width:100%; margin-top:10px; font-size:20px;">
-                      Submit
-                   </button>
-               </form>
-            </div>
+const saved = localStorage.getItem('theme') || 'light';
+if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    toggle.innerHTML = '☀️ Light';
+}
 
-            <div class="span5 offset1">
-               <h3>Contact</h3>
-               <h4>Phone</h4>
-               <p>+233 20-087-6117 or +233 55-056-3536</p>
+toggle.addEventListener('click', () => {
+    if (html.getAttribute('data-theme') === 'dark') {
+        html.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        toggle.innerHTML = '🌙 Dark';
+    } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        toggle.innerHTML = '☀️ Light';
+    }
+});
+</script>
 
-               <h4>Email</h4>
-               <p>eyilimoan48@gmail.com</p>
-            </div>
-         </div>
-
-         <footer id="footer">
-            <div class="row-fluid">
-               <div class="span5">
-                  <h3>Contact Information</h3>
-                  <p><b>Office Hours:</b> Mon–Fri (8am–5pm)</p>
-                  <p><b>Phone:</b> (+233) 20-087-6117</p>
-                  <p><b>Cell:</b> (+233) 55-056-3536</p>
-                  <a href="mailto:eyilimoan48@gmail.com">Email</a>
-               </div>
-
-               <div class="span2">
-                  <img src="images/lablogo.png" alt="Lab Logo">
-               </div>
-
-               <div class="span5">
-                  <h3>Climate and Health Lab</h3>
-                  <p>Casley Hayford<br>
-                  ROOM 432<br>
-                  KNUST, Kumasi<br>
-                  Ghana</p>
-                  <a href="https://www.google.com/maps/place/Kwame+Nkrumah+University+of+Science+and+Technology,+Kumasi/@6.6754286,-1.6489555,13z/data=!3m1!4b1!4m6!3m5!1s0xfdb946c39956a09:0x67868ca2b098015f!8m2!3d6.674688!4d-1.571728!16s%2Fg%2F1vzg3llh!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MTIwNy4wIKXMDSoASAFQAw%3D%3D">Show Map</a>
-               </div>
-            </div>
-         </footer>
-      </div>
-
-      <!-- Javascript files -->
-      <script src="js/jquery-1.9.1.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-
-      <!-- Tawk.to Chatbot Script -->
-      <script type="text/javascript">
-         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-         (function(){
-         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-         s1.async=true;
-         s1.src='https://embed.tawk.to/694ff7579ee58d19786cdf86/1jdg5sbvm';
-         s1.charset='UTF-8';
-         s1.setAttribute('crossorigin','*');
-         s0.parentNode.insertBefore(s1,s0);
-         })();
-      </script>
-
-      <!-- Google Translate Script -->
-      <script type="text/javascript">
-         function googleTranslateElementInit() {
-             new google.translate.TranslateElement({
-                 pageLanguage: 'en'
-             }, 'google_translate_element');
-         }
-      </script>
-      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-      <!-- Theme Toggle Script -->
-      <script>
-         const toggle = document.getElementById('themeToggle');
-         const html = document.documentElement;
-
-         // Load saved theme
-         const saved = localStorage.getItem('theme') || 'light';
-         if (saved === 'dark') {
-             html.setAttribute('data-theme', 'dark');
-             toggle.innerHTML = '<span id="themeIcon">☀️</span> Light';
-         }
-
-         // Toggle on click
-         toggle.addEventListener('click', () => {
-             const current = html.getAttribute('data-theme');
-             if (current === 'dark') {
-                 html.setAttribute('data-theme', 'light');
-                 localStorage.setItem('theme', 'light');
-                 toggle.innerHTML = '<span id="themeIcon">🌙</span> Dark';
-             } else {
-                 html.setAttribute('data-theme', 'dark');
-                 localStorage.setItem('theme', 'dark');
-                 toggle.innerHTML = '<span id="themeIcon">☀️</span> Light';
-             }
-         });
-      </script>
-   </body>
+</body>
 </html>
