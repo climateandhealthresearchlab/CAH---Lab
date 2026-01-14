@@ -47,16 +47,16 @@
       right: 20px;
       z-index: 9999;
       background: var(--secondary-bg);
-      padding: 1px 4px;          /* even smaller padding */
+      padding: 1px 4px;
       border-radius: 20px;
       border: 1px solid #ccc;
       width: auto;
       height: auto;
     }
 
-    /* Make widget much smaller */
+    /* Compact Google Translate widget */
     .goog-te-gadget {
-      font-size: 0 !important;   /* hide extra text scales */
+      font-size: 0 !important;
       color: transparent !important;
     }
     .goog-te-gadget-simple {
@@ -64,13 +64,14 @@
       border: none !important;
       background: none !important;
     }
-    .goog-te-combo {               /* main dropdown - now smaller & tinier font */
+    .goog-te-combo {
       margin: 0 !important;
-      padding: 3px 6px !important;   /* tiny padding */
-      font-size: 11px !important;    /* smaller font size (was 12px) */
-      height: 24px !important;       /* shorter height */
-      width: 110px !important;       /* narrower width (adjust to 100px if still too wide) */
-      min-width: 100px !important;
+      padding: 2px 6px !important;   /* very tight padding */
+      font-size: 10px !important;    /* smaller text */
+      height: 22px !important;       /* shorter */
+      width: 100px !important;       /* narrower - main change here */
+      min-width: 90px !important;
+      max-width: 100px !important;
       border-radius: 20px !important;
       border: 1px solid #ccc !important;
       background: var(--secondary-bg) !important;
@@ -80,20 +81,20 @@
       -moz-appearance: none;
       appearance: none;
     }
-    /* Hide branding aggressively */
+    /* Hide branding / extra elements */
     .goog-te-gadget .goog-te-banner-frame,
     .goog-logo-link,
     .goog-te-gadget-icon,
     .goog-te-combo + span,
-    .goog-te-combo + div {         /* extra targeting for any lingering text */
+    .goog-te-combo + div {
       display: none !important;
     }
-    /* Narrower opened menu */
+    /* Smaller dropdown menu when opened */
     .goog-te-menu-frame {
-      max-width: 140px !important;   /* smaller popup list */
+      max-width: 130px !important;
     }
     .goog-te-menu2 {
-      font-size: 11px !important;    /* smaller text in dropdown list */
+      font-size: 10px !important;
       max-width: 100% !important;
       overflow-x: hidden !important;
     }
