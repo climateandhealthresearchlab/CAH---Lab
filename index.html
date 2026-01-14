@@ -47,16 +47,16 @@
       right: 20px;
       z-index: 9999;
       background: var(--secondary-bg);
-      padding: 2px 6px;          /* smaller padding */
+      padding: 1px 4px;          /* even smaller padding */
       border-radius: 20px;
       border: 1px solid #ccc;
       width: auto;
       height: auto;
     }
 
-    /* Shrink Google Translate widget */
+    /* Make widget much smaller */
     .goog-te-gadget {
-      font-size: 11px !important;  /* smaller overall font */
+      font-size: 0 !important;   /* hide extra text scales */
       color: transparent !important;
     }
     .goog-te-gadget-simple {
@@ -64,13 +64,13 @@
       border: none !important;
       background: none !important;
     }
-    .goog-te-combo {               /* the dropdown select box */
+    .goog-te-combo {               /* main dropdown - now smaller & tinier font */
       margin: 0 !important;
-      padding: 4px 8px !important;
-      font-size: 9px !important;
-      height: 26px !important;     /* smaller height */
-      width: 80px !important;     /* adjust this: try 110px–140px for your preference */
-      min-width: 80px !important;
+      padding: 3px 6px !important;   /* tiny padding */
+      font-size: 11px !important;    /* smaller font size (was 12px) */
+      height: 24px !important;       /* shorter height */
+      width: 110px !important;       /* narrower width (adjust to 100px if still too wide) */
+      min-width: 100px !important;
       border-radius: 20px !important;
       border: 1px solid #ccc !important;
       background: var(--secondary-bg) !important;
@@ -80,18 +80,20 @@
       -moz-appearance: none;
       appearance: none;
     }
-    /* Hide/minimize branding (common workaround) */
+    /* Hide branding aggressively */
     .goog-te-gadget .goog-te-banner-frame,
     .goog-logo-link,
     .goog-te-gadget-icon,
-    .goog-te-combo + span {       /* targets "Powered by" text */
+    .goog-te-combo + span,
+    .goog-te-combo + div {         /* extra targeting for any lingering text */
       display: none !important;
     }
-    /* Make opened dropdown menu narrower */
+    /* Narrower opened menu */
     .goog-te-menu-frame {
-      max-width: 160px !important;
+      max-width: 140px !important;   /* smaller popup list */
     }
     .goog-te-menu2 {
+      font-size: 11px !important;    /* smaller text in dropdown list */
       max-width: 100% !important;
       overflow-x: hidden !important;
     }
@@ -274,8 +276,8 @@
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'en',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,  // <-- key change for compact dropdown
-      autoDisplay: false  // prevents auto-popup
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
     }, 'google_translate_element');
   }
 </script>
