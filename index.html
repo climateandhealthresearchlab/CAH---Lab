@@ -3,37 +3,30 @@
 <head>
   <meta charset="utf-8">
   <title>Climate And Health Research Lab - Home</title>
-
   <link rel="icon" type="image/png" href="images/Favicon.png">
   <link rel="icon" type="image/png" sizes="59x59" href="images/Favicon.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Research Lab, Home, Kwame Nkrumah University of Science and Technology">
-
   <!-- Styles -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
   <link href="css/theme.css" rel="stylesheet">
-
   <style>
     :root {
       --bg-color: #ffffff;
       --text-color: #333333;
       --secondary-bg: #f5f5f5;
     }
-
     [data-theme="dark"] {
       --bg-color: #1a1a1a;
       --text-color: #e0e0e0;
       --secondary-bg: #2d2d2d;
     }
-
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: background-color 0.3s, color 0.3s;
     }
-
     .theme-toggle {
       position: fixed;
       top: 20px;
@@ -48,46 +41,82 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
       color: var(--text-color);
     }
-
     #google_translate_element {
       position: fixed;
       top: 60px;
       right: 20px;
       z-index: 9999;
       background: var(--secondary-bg);
-      padding: 5px 10px;
+      padding: 2px 6px;          /* smaller padding */
       border-radius: 20px;
       border: 1px solid #ccc;
+      width: auto;
+      height: auto;
+    }
+
+    /* Shrink Google Translate widget */
+    .goog-te-gadget {
+      font-size: 11px !important;  /* smaller overall font */
+      color: transparent !important;
+    }
+    .goog-te-gadget-simple {
+      padding: 0 !important;
+      border: none !important;
+      background: none !important;
+    }
+    .goog-te-combo {               /* the dropdown select box */
+      margin: 0 !important;
+      padding: 4px 8px !important;
+      font-size: 12px !important;
+      height: 26px !important;     /* smaller height */
+      width: 130px !important;     /* adjust this: try 110px–140px for your preference */
+      min-width: 110px !important;
+      border-radius: 20px !important;
+      border: 1px solid #ccc !important;
+      background: var(--secondary-bg) !important;
+      color: var(--text-color) !important;
+      box-shadow: none !important;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    /* Hide/minimize branding (common workaround) */
+    .goog-te-gadget .goog-te-banner-frame,
+    .goog-logo-link,
+    .goog-te-gadget-icon,
+    .goog-te-combo + span {       /* targets "Powered by" text */
+      display: none !important;
+    }
+    /* Make opened dropdown menu narrower */
+    .goog-te-menu-frame {
+      max-width: 160px !important;
+    }
+    .goog-te-menu2 {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
     }
 
     #footer {
       clear: both;
       margin-top: 60px;
     }
-
     .clearfix {
       clear: both;
     }
   </style>
 </head>
-
 <body>
-
 <button class="theme-toggle" id="themeToggle">
   <span id="themeIcon">🌙</span> Dark
 </button>
-
 <div id="google_translate_element"></div>
-
 <div class="container">
-
   <!-- HEADER -->
   <header id="overview" style="text-align:center; margin-bottom:20px;">
     <img src="images/heading.jpg"
          alt="Climate And Health Research Lab Banner"
          style="width:100%; height:auto;">
   </header>
-
   <!-- NAVIGATION -->
   <div class="masthead">
     <div class="navbar">
@@ -108,47 +137,39 @@
       </div>
     </div>
   </div>
-
   <!-- CAROUSEL -->
   <div class="row-fluid">
     <div class="span12">
       <div id="main-carousel" class="carousel slide">
         <div class="carousel-inner">
-
           <div class="item active">
             <img src="images/labpicture.jpg" class="carousel-image" alt="">
             <div class="carousel-caption">
               <h4>Welcome to the Climate and Health Lab</h4>
             </div>
           </div>
-
           <div class="item">
             <img src="images/onlyyamba.jpg" class="carousel-image" alt="">
             <div class="carousel-caption">
               <h4>Summer School</h4>
             </div>
           </div>
-
           <div class="item">
             <img src="images/yambavic.jpg" class="carousel-image" alt="">
             <div class="carousel-caption">
               <h4>Presentations</h4>
             </div>
           </div>
-
         </div>
         <a class="left carousel-control" href="#main-carousel" data-slide="prev">‹</a>
         <a class="right carousel-control" href="#main-carousel" data-slide="next">›</a>
       </div>
     </div>
   </div>
-
   <hr>
-
   <!-- INTRO + RECENT NEWS -->
   <div class="container-fluid">
     <div class="row-fluid marketing">
-
       <div class="span12">
         <p>
           Welcome to the <b>Climate and Health Lab</b>! We are led by
@@ -165,13 +186,11 @@
         </p>
         <br/>
       </div>
-
       <div class="row-fluid">
         <hr>
         <h2 class="centered">Recent News</h2>
         <hr>
       </div>
-
       <!-- NEWS ITEM 1 -->
       <div class="span4 feature-item">
         <h5><span class="date">November 29, 2025</span></h5>
@@ -195,7 +214,6 @@
         </p>
         <br><br>
       </div>
-
       <!-- NEWS ITEM 2 -->
       <div class="span4 feature-item">
         <h5><span class="date">December 9, 2025</span></h5>
@@ -217,19 +235,14 @@
         </p>
         <br>
       </div>
-
     </div>
   </div>
-
   <div class="clearfix"></div>
-
 </div>
-
 <!-- FOOTER -->
 <footer id="footer">
   <div class="container-fluid">
     <div class="row-fluid">
-
       <div class="span5">
         <h3>Contact Information</h3>
         <p><b>Office Hours:</b> Monday–Friday (8.00am – 5.00pm)</p>
@@ -237,11 +250,9 @@
         <p><b>Cell:</b> (+233) 55-056-3536</p>
         <a href="mailto:eyilimoan48@gmail.com">Email</a>
       </div>
-
       <div class="span2">
         <img src="images/lablogo.png" alt="research-lab-logo">
       </div>
-
       <div class="span5">
         <h3>Climate and Health Lab</h3>
         <p>
@@ -252,33 +263,31 @@
         </p>
         <a href="https://www.google.com/maps/place/Casely+-+Hayford+Building/@6.6756608,-1.5703021,17z/data=!3m1!4b1!4m6!3m5!1s0xfdb950098c80055:0xab0c5d2575808dab!8m2!3d6.6756555!4d-1.5677272!16s%2Fg%2F11gltjb61x?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D">Show Map</a>
       </div>
-
     </div>
   </div>
 </footer>
-
 <!-- Scripts -->
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>$('#main-carousel').carousel();</script>
-
-<script>
+<script type="text/javascript">
   function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,  // <-- key change for compact dropdown
+      autoDisplay: false  // prevents auto-popup
+    }, 'google_translate_element');
   }
 </script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
   const toggle = document.getElementById('themeToggle');
   const html = document.documentElement;
-
   const saved = localStorage.getItem('theme') || 'light';
   if (saved === 'dark') {
     html.setAttribute('data-theme', 'dark');
     toggle.innerHTML = '<span id="themeIcon">☀️</span> Light';
   }
-
   toggle.addEventListener('click', () => {
     const current = html.getAttribute('data-theme');
     if (current === 'dark') {
@@ -292,6 +301,5 @@
     }
   });
 </script>
-
 </body>
 </html>
