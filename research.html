@@ -215,18 +215,18 @@
             </div>
          </div>
       </div> -->
-      <footer id="footer">
+       <footer id="footer">
          <div class="container-fluid">
             <div class="row-fluid">
                <div class="span5">
-                   <h3>Contact Information</h3>
+                  <h3>Contact Information</h3>
                   <p><b>Office Hours: </b>Monday-Friday (8.00am - 5.00pm)</p>
                   <p><b>Phone: </b>(+233) 20-087-6117</p>
                   <p><b>Cell: </b>(+233) 55-056-3536</p>
                   <a href="mailto:eyilimoan48@gmail.com">Email</a>
                </div>
                <div class="span2">
-                  <a href="https://mybrandnewlogo.com/"><img src = "images/lablogo.png" alt="research-lab-logo"/></a>
+                  <a href="https://mybrandnewlogo.com/"><img src="images/lablogo.png" alt="research-lab-logo"/></a>
                </div>
                <div class="span5">
                   <h3>Climate and Health Lab</h3>
@@ -235,15 +235,13 @@
                      KNUST, Kumasi<br>
                      Ghana
                   </p>
-                  <a href="http://maps.google.com/">Show Map</a>
+                  <a href="https://www.google.com/maps/place/Kwame+Nkrumah+University+of+Science+and+Technology,+Kumasi/@6.6754286,-1.6489555,13z/data=!3m1!4b1!4m6!3m5!1s0xfdb946c39956a09:0x67868ca2b098015f!8m2!3d6.674688!4d-1.571728!16s%2Fg%2F1vzg3llh!5m1!1e4?entry=ttu&g_ep=EgoyMDI1MTIwNy4wIKXMDSoASAFQAw%3D%3D">Show Map</a>
                </div>
             </div>
          </div>
       </footer>
 
-      <!-- Le javascript
-         ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
+      <!-- Le javascript -->
       <script src="js/jquery-1.9.1.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script>
@@ -252,7 +250,43 @@
                  target: "#navparent"
              });
          });
-         
+      </script>
+
+      <!-- Google Translate Script -->
+      <script type="text/javascript">
+         function googleTranslateElementInit() {
+             new google.translate.TranslateElement({
+                 pageLanguage: 'en'
+             }, 'google_translate_element');
+         }
+      </script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+      <!-- Theme Toggle Script -->
+      <script>
+         const toggle = document.getElementById('themeToggle');
+         const html = document.documentElement;
+
+         // Load saved theme
+         const saved = localStorage.getItem('theme') || 'light';
+         if (saved === 'dark') {
+             html.setAttribute('data-theme', 'dark');
+             toggle.innerHTML = '<span id="themeIcon">☀️</span> Light';
+         }
+
+         // Toggle on click
+         toggle.addEventListener('click', () => {
+             const current = html.getAttribute('data-theme');
+             if (current === 'dark') {
+                 html.setAttribute('data-theme', 'light');
+                 localStorage.setItem('theme', 'light');
+                 toggle.innerHTML = '<span id="themeIcon">🌙</span> Dark';
+             } else {
+                 html.setAttribute('data-theme', 'dark');
+                 localStorage.setItem('theme', 'dark');
+                 toggle.innerHTML = '<span id="themeIcon">☀️</span> Light';
+             }
+         });
       </script>
    </body>
 </html>
